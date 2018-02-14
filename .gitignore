@@ -1,0 +1,10 @@
+.vagrant/
+ubuntu-xenial-16.04-cloudimg-console.log
+
+go*.linux-amd64.tar.gz
+go-ethereum/
+
+greeter.js
+simple.js
+output/
+
