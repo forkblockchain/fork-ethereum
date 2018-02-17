@@ -3,9 +3,13 @@
 # Installation
 
 ## Docker
+
+[Install Docker](https://www.docker.com/community-edition)
+
 _Dockerfile_
 
 https://hub.docker.com/r/forkblockchain/fork-ethereum/
+
 docker pull forkblockchain/fork-ethereum:latest
 
 or 
@@ -20,7 +24,15 @@ then
 
 ## Vagrant
 
+[Install VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+
+[Install Vagrant](https://www.vagrantup.com/docs/installation/)
+
 vagrant up --provision
+
+# Initialization of Chain
+
+_geth Commands_
 
 ./init-genesis.sh
 
@@ -28,9 +40,10 @@ vagrant up --provision
 
 ./connect-geth.sh
 
-# Initialization of Chain
 
-Account Setup Commands
+# Account Setup Commands
+
+_Create New Account_
 
 personal.newAccount();
 
@@ -38,17 +51,17 @@ or (need to specify passpharse as argument in container)
 
 personal.newAccount("YOUR PASSPHRASE");
 
-
+_Show Balance_
 
 eth.getBalance(eth.accounts[0]);
 
-#generate DAG and mine coins
+_Generate DAG and mine coins_
 miner.start();
 
 miner.stop();
 
 # Smart Contract Example
-Contract Commands
+_Contract Commands_
 
 loadScript("simple.js")
 
@@ -56,7 +69,8 @@ var parsedSimpleContract = web3.eth.contract(JSON.parse(simpleContract.contracts
 
 personal.unlockAccount(eth.accounts[0], "YOUR PASSPHRASE");
 
-#log mined contract
+_Log mined contract_
+```
 var simpleContract = parsedSimpleContract.new({ from: eth.accounts[0], data: "0x" + simpleContract.contracts["simple.sol:Simple"].bin, gas: 4700000},
   function (e, contract) {
     console.log(e, contract);
@@ -65,33 +79,34 @@ var simpleContract = parsedSimpleContract.new({ from: eth.accounts[0], data: "0x
     }
   }
 );
+```
 
 #mine contract
 miner.start();
 
 miner.stop();
 
-#execute locally
+_Execute locally_
 simpleContract.multiply.call(9,2);
 
-#execute on evm
+_Execute on evm_
 simpleContract.multiply.sendTransaction(2,2,{from:eth.accounts[0]})
 
-#process smart contract transaction
+_Process smart contract transaction_
 miner.start();
 
 miner.stop();
 
+_View Logged Events_
 var simpleContractEvents = simpleContract.allEvents({fromBlock: 0, toBlock: 'latest'});
 
+```
 simpleContractEvents.get(function(error, logs) {
   logs.forEach( function(log,error) {
     console.log(JSON.stringify(log.args));
   })
 });
-
-
-
+```
 
 # References
 
