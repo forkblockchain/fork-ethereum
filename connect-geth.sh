@@ -1,3 +1,3 @@
 #!/bin/bash -ev
 
-./go-ethereum/build/bin/geth attach /home/ubuntu/testchain/geth.ipc
+./go-ethereum/build/bin/geth attach ~/testchain/geth.ipc
