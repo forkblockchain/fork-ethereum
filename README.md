@@ -22,6 +22,8 @@ then
 
 ./enter-docker.sh
 
+cd /ethereum
+
 ## Vagrant
 
 [Install VirtualBox](https://www.virtualbox.org/wiki/Downloads)
@@ -29,6 +31,8 @@ then
 [Install Vagrant](https://www.vagrantup.com/docs/installation/)
 
 vagrant up --provision
+
+cd /home/ethereum/
 
 # Initialization of Chain
 
