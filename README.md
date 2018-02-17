@@ -16,7 +16,7 @@ or
 
 _Docker compose_
 
-docker compose up -d
+docker-compose up -d
 
 then
 
