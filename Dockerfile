@@ -6,4 +6,5 @@ FROM ubuntu:xenial
 COPY . /forkethereum
 WORKDIR /forkethereum
 RUN apt-get update -qq && apt-get install -yqq sudo
+RUN apt-get install -yqq vim
 RUN ./install.sh
