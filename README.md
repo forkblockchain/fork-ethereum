@@ -56,6 +56,7 @@ _Show Balance_
 eth.getBalance(eth.accounts[0]);
 
 _Generate DAG and mine coins_
+
 miner.start();
 
 miner.stop();
@@ -81,23 +82,27 @@ var simpleContract = parsedSimpleContract.new({ from: eth.accounts[0], data: "0x
 );
 ```
 
-#mine contract
+_Mine contract_
 miner.start();
 
 miner.stop();
 
 _Execute locally_
+
 simpleContract.multiply.call(9,2);
 
 _Execute on evm_
+
 simpleContract.multiply.sendTransaction(2,2,{from:eth.accounts[0]})
 
 _Process smart contract transaction_
+
 miner.start();
 
 miner.stop();
 
 _View Logged Events_
+
 var simpleContractEvents = simpleContract.allEvents({fromBlock: 0, toBlock: 'latest'});
 
 ```
