@@ -1,10 +1,26 @@
 [![Join the chat at https://gitter.im/fork-ethereum/Lobby](https://badges.gitter.im/fork-ethereum/Lobby.svg)](https://gitter.im/fork-ethereum/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Dockerfile
+# Installation
+
+## Docker
+_Dockerfile_
 
 https://hub.docker.com/r/forkblockchain/fork-ethereum/
 docker pull forkblockchain/fork-ethereum:latest
 
+or 
+
+_Docker compose_
+
+docker compose up -d
+
+then
+
+./enter-docker.sh
+
+## Vagrant
+
+vagrant up --provision
 
 ./init-genesis.sh
 
@@ -12,7 +28,7 @@ docker pull forkblockchain/fork-ethereum:latest
 
 ./connect-geth.sh
 
-
+# Initialization of Chain
 
 Account Setup Commands
 
@@ -31,6 +47,7 @@ miner.start();
 
 miner.stop();
 
+# Smart Contract Example
 Contract Commands
 
 loadScript("simple.js")
@@ -76,7 +93,7 @@ simpleContractEvents.get(function(error, logs) {
 
 
 
-References
+# References
 
 Puppeth
 https://modalduality.org/posts/puppeth/
