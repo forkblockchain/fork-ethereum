@@ -18,6 +18,12 @@ Account Setup Commands
 
 personal.newAccount();
 
+or (need to specify passpharse as argument in container)
+
+personal.newAccount("YOUR PASSPHRASE");
+
+
+
 eth.getBalance(eth.accounts[0]);
 
 #generate DAG and mine coins
