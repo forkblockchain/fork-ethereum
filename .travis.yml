@@ -1,0 +1,17 @@
+sudo: false
+matrix:
+  include:
+      - os: linux
+        services: docker
+        script:
+          - travis_retry docker build .
+      - os: linux
+        dist: trusty
+        sudo: required
+        before_script:
+          - true
+        before_install:
+          - true
+        script:
+          - travis_wait 120 ./install.sh
+
